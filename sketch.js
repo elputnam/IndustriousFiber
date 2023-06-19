@@ -1,3 +1,5 @@
+//I had some idea to create a web or net, but ended up with angsty threads and nervous pixels
+
 let nodes = [];
 let pixels = [];
 let rad = 0;
@@ -9,10 +11,10 @@ let grow = 0.1;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   colorMode(HSB, 360, 100, 100, 100);
-  background(10);
+  background(0);
   rectMode(CENTER);
   frameRate(30);
-  H1 = random(100,255);
+  H1 = random(50,255);
   //strings
   for (var j = 0; j < 70; j++) {
 		nodes[j] = new Node(random(width), random(height), random(width), random(height));
@@ -24,7 +26,7 @@ function setup() {
 }
 
 function draw() {
-  background(10, 5);
+  background(10, 10);
  
   for (let l = 0; l < pixels.length; l++){
     pixels[l].show();
@@ -99,7 +101,7 @@ class Pixel{
     //breathing
     if (rad <= MIN || rad >= MAX){
       this.grow *= -1;
-      H1 = random(100,255);
+      H1 = random(50,255);
       this.v3.x = random(width);
       this.v3.y = random(height);
     }
